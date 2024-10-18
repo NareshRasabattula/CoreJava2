@@ -1,0 +1,24 @@
+CommonTechnicalInterviewQuestions.md
+OOP.md
+README.md
+SearchAndSort.md
+SqlExercises.md
+
+# Compiled Files
+*.class
+bin/
+build/
+/bin1/
+java/build/**
+
+# Maven
+log/
+target/
+
+# Inclusions
+!lib/**
+
+# Package Files #
+*.jar
+*.war
+*.ear
