@@ -1,0 +1,29 @@
+Link :- https://tutorialsinhand.com/Articles/explain-spring-ioc-container-internal-working.aspx
+The Spring Container is responsible to:
+
+create the objects (bean)
+wire the created objects together
+configure the objects
+manage the objects complete life cycle from creation till destruction.
+But lets understand how all these tasks are performed internally by spring IOC container.
+
+ 
+
+Spring IOC container accepts two components as input :
+
+ Java POJO (Learn about pojo)
+Configuration metadata in form of xml file, java based configurations, annotation or mixture of any of the three techniques.
+
+The configuration metadata contains instruction for container about:
+
+Which bean objects to create?
+How to configure the beans?
+What is the scope for each beans?
+How to configure the created beans?
+So we can see that spring container performs responsible tasks mentioned at the beginning by reading the instructions in configuration metadata.
+
+ 
+
+In Spring, objects do not have responsibility of finding or creating their dependency that need to complete their task. Rather the Spring container takes the responsibility of giving the reference to the objects with whom they need to collaborate with.
+
+ 

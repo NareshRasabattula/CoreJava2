@@ -1,0 +1,96 @@
+1. ConcurrentHashMap and CopyOnWriteArrayList are two weakly consistent/fail safe collection classes.
+	In case of fail fast collections whenever we call next() method first it will check the value of of 
+	"modCount" which indicate that the collection is changed or not, If the the value of modCount is not 
+	as same as before then it will throw ConcurrentModificationException.
+
+2. Queue In Collection :-
+    2.1 -> Diff between poll() and remove() method in Queue interface is poll() method return null if queue is empty.
+		but remove() method throw java.util.NoSuchElementException exception.
+		
+3. UnSupportedException comes when you try to add the value in UnModifiedCollection. Basically it means JVM is preventing 
+	you to perform some operation.
+	
+4. Default size of Queue is 11.
+
+5. Default size of HashMap bucket is 16.
+
+6. Default size of ArrayList is 10.
+
+7. ConcurrentHashMap provides better performance by locking only the portion of the map rather than blocking the whole
+	map resulting in greater shared access, it does not allow null key or null value.
+	
+	It allows concurrent access to the map. Part of the map called Segment (internal data structure) is only getting locked while adding 
+	or updating the map. So ConcurrentHashMap allows concurrent threads to read the value without locking at all. This data structure was
+	introduced to improve performance.
+	
+	In implementation of ConcurrentHashMap we write modification logic in synchronized block and read logic in normal block so
+	that multiple thread can read at the same time.
+	
+	a. ReentrantLock lock for locking macanism.
+	b. default capacity = 16
+	c. loadfactor = 0.75
+	d. cuncurrency level = 16
+	e. it is better choice more reads then write.
+	
+	"https://dzone.com/articles/how-concurrenthashmap-works-internally-in-java"
+	
+	Unlike Hashtable and Synchronized Map, it never locks whole Map, instead, it divides the map into segments and locking is done 
+	on those.
+
+Read more: https://javarevisited.blogspot.com/2011/04/difference-between-concurrenthashmap.html#ixzz5sg1nTYkl
+
+8. Diff between HashMap and ConcurrentHashMap
+	a. ConcurrentHashMap is good option for multithreaded environment, using HashMap we can get synchronizedMap but this is
+		same as lagacy HashTable.
+	b. So basically if you use ConcurrentHashMap then it provide some additional facility like at a time more than one
+		Thread can read the data.
+	c. HashMap's performance is high and sometimes ConcurrentHashMap's performance is low because thread required to wait.
+	d. In HashMap while iterating over it if we try to modify the object then it will throw ConcurrentModificationException which means it's fail 
+	   fast in nature but in case of ConcurrentHashMap we can modify the object while iterating over it.
+	e. In HashMap we can have key and value as null but in case of ConcurrentHashMap we can't hava key and value as null otherwise we will get 
+	   NullPointerException.
+
+9. ConcurrentHashMap vs SynchronizedMap
+	a. Only part of map object is locked in case of ConcurrentHashMap but SynchronizedMap locks whole map object.
+	b. The code of all method of SynchronizedMap is written in synchronized block.
+	
+9. Important points about TreeSet :-
+	a. In order to add custom or user defined objects to TreeSet data structure, the custom class should implement the Comparable 
+	   interface or a Comparator should be passed to TreeSet constructor during creation. This is required because TreeSet does not allow 
+	   duplicate elements and to ensure this with custom objects, TreeSet requires a comparator function to perform the comparison 
+	   of custom objects. If a comparator is not specified then when you try to add a custom object to TreeSet, it will 
+	   throw java.lang.ClassCastException.
+	   
+10. Homegeneous and Hetrogeneous -> Array have a runtime check on the type of the added element. That is, if a new element that is not of the same type  
+	is added, an ArrayStoreException is thrown at runtime. That's why they are considerd as "homegeneous".
+	That is not true for ArrayList. Due to type erasure at runtime, it can practically hold any object.
+	
+11. HashMap java 8 Implementation -> 
+	a. But you can't rely on people to implement good hash functions. People will often write poor hash functions which will result in a 
+		non-even distribution. It's also possible that we could just get unlucky with our inputs means (It might possible that
+		we will get same hashcode and same bucket index for more elements).
+	b. The implementation of Hashmap tries to mitigate this by organising some buckets into trees rather than linked lists if the 
+		buckets becomes too large. This is what TREEIFY_THRESHOLD = 8 is for. If a bucket contains more than eight items, 
+		it should become a tree.
+	c. This tree is a Red-Black tree. It is first sorted by hash code. If the hash codes are the same, it uses the compareTo 
+		method of Comparable if the objects implement that interface, else the identity hash code.
+	d.If entries are removed from the map, the number of entries in the bucket might reduce such that this tree structure is no 
+		longer necessary. That's what the UNTREEIFY_THRESHOLD = 6 is for. If the number of elements in a bucket drops below six,
+		we might as well go back to using a linked list.
+		
+12. TreeSet work as homogeneous, we can not add different value like string and int at same time.
+	If we try to add this we will get "ClassCastException" at run time.
+	
+13. Look at the below example to understand why stringbuffer and stringbuilder is not overriding equals and hashcode methods.
+
+        StringBuffer sb = new StringBuffer("abc");
+        StringBuffer sb1 = new StringBuffer("abc");
+        
+        StringBuffer sb2 = new StringBuffer("abc");
+        
+        Map<StringBuffer, String> hm = new HashMap<>();
+        hm.put(sb, "vaibhav");
+        hm.put(sb1, "jain");
+        System.out.println(hm.get(sb2));
+	
+14. 	

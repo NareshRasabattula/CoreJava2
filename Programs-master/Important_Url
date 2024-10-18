@@ -1,0 +1,31 @@
+A Gentle Explanation of Logarithmic Time Complexity
+https://medium.com/better-programming/a-gentle-explanation-of-logarithmic-time-complexity-79842728a702
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+https://javahungry.blogspot.com/2014/06/how-treemap-works-ten-treemap-java-interview-questions.html
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+https://www.journaldev.com/1827/java-design-patterns-example-tutorial
+Below are java questions links.
+
+Methods in Object class - https://www.geeksforgeeks.org/object-class-in-java/
+Abstract class in java - https://www.journaldev.com/1582/abstract-class-in-java, https://www.journaldev.com/1607/difference-between-abstract-class-and-interface-in-java 
+Why hashcode and equals method required to be overridden. https://www.geeksforgeeks.org/override-equalsobject-hashcode-method/
+OOPs concepts - https://www.journaldev.com/12496/oops-concepts-java-example , https://www.journaldev.com/12492/oops-interview-questions-answers, http://tutorials.jenkov.com/java/inheritance.html
+Java Exception handling - https://www.journaldev.com/1696/exception-handling-in-java, https://www.geeksforgeeks.org/exceptions-in-java/
+Java String questions - https://www.journaldev.com/1321/java-string-interview-questions-and-answers
+Java collection framework -  https://www.journaldev.com/1260/collections-in-java-tutorial, https://www.journaldev.com/1330/java-collections-interview-questions-and-answers 
+Internal implementation in hash map in java  -  https://www.javamadesoeasy.com/2015/02/hashmap-custom-implementation.html, https://www.javamadesoeasy.com/2015/04/hashmap-in-java.html
+Java multithreading basics.
+https://www.javamadesoeasy.com/2015/09/how-garbage-collection-works-internally.html
+https://javapapers.com/java/types-of-java-garbage-collectors/
+https://dzone.com/articles/jvm-architecture-explained
+https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java
+https://www.geeksforgeeks.org/lru-cache-implementation/
+Journal dev / jenkov / jmse / java revisited 
+These are good resources to read on java
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+https://javaconceptoftheday.com/interface-vs-abstract-class-after-java-8/#:~:text=After%20Java%208%2C%20an%20interface,methods%20along%20with%20abstract%20methods.&text=Abstract%20classes%20can't%20have%20default%20methods.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+http://techieme.in/comparable-and-comparato/
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Why would one declare an immutable class final in Java?
+https://stackoverflow.com/questions/12306651/why-would-one-declare-an-immutable-class-final-in-java#:~:text=The%20standard%20argument%20for%20making,mutates%20out%20from%20under%20them.

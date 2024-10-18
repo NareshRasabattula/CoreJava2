@@ -1,0 +1,12 @@
+Userfull Links :- https://thorben-janssen.com/what-is-spring-data-jpa-and-why-should-you-use-it/
+
+There are 3 repository interfaces in Spring Data JPA:
+
+1. CrudRepository
+2. PagingAndSortingRepository
+3. JpaRepository
+
+By default, Spring Boot expects that all repositories are located in a sub-packages of the class annotated with @SpringBootApplication. 
+If your application doesn’t follow this default, you need to configure the packages of your repositories using an @EnableJpaRepositories annotation.
+
+I Implements the Repository pattern.

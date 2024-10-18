@@ -1,0 +1,49 @@
+Sender(Publisher)       -----       Message Queue         -----         Receiver(Subscriber)
+
+What is Kafka?
+1. Even streaming platform.
+2. Open source
+
+Kafka data function :-
+1. Collection 2. Storage 3.Transport 4.Fault tolerance 5. Tracking
+
+Benefit of Kafka :-
+1. High Throughput 2. low latency 3. Realtime stream processing 4. Even Sourcing
+
+What is Message?
+It Even or Unit of data, it's consist of Byte Array with default size is 1 MB.
+
+Message -> Key(Not mandatory), Value(Actual Value Byte Array), Timestamp
+
+What is Topic?
+Topic -> It's a queue for similar message, and topic can have multiple partitions.
+
+Topic 1
+p1 [m1][m3][m7]
+p2 [m2][m6]
+p3 [m4][m5][m8]
+
+
+Topic 2
+p1 [m1][m3][m4]
+p2 [m2][m5][m6]
+
+p stands for partitions
+
+What is Brokers?
+Brain (manage life cycle of partitions)
+
+What is Logs?
+It's physical files 
+So before sending to Consumers it stores the data in Physical Files and broker manages it.
+
+What is Zookeeper?
+Zookeeper serve as the central information store for Kafka.
+It handles Broker Management 
+(First broker that starts up register itself as the active controller)
+Failure recovery is synchronized through Zookeeper.
+
+It handles Topic Management
+
+
+

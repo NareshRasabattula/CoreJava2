@@ -1,0 +1,51 @@
+it's multiplateform language
+static typed language
+extremly fluent
+can write script in kotlin "sample.kts"
+
+Some nice things:
+-semicolon is optional     [Help to create DSL]
+-sensible warnings
+-type inference:- it means it's look at the content and define type for you            [val greet = "Hello"]
+-val vs var
+-string templates:- [val name = "Greg" println("Hello $name") println("Hello ${name.length}")]
+-multiline strings:- 
+-trimMargin() or trimMargin("|"):- remove indendations
+-expressions over statementes:- 
+
+Functions:
+-void function :- kotlin fun always returns something if void then it will return Unit.
+-default argument :- fun display(String name, boolean pass = true)
+-named argument :- createPerson("Sam", age = 12, weight = 50, height = 100) [No need to thing about the order]
+-vararg and spread :- 
+
+Let's try this 
+fun process(input: Any) = when(input) {
+	1 -> "one"
+	in 13..19 -> "teen"
+	in String -> "Got a string"
+	else -> "whatever"
+}
+
+Note :- == is equals to .equals() method
+
+Null Type: There is a problem in java with Optional<T> [1. small overhead, 2. They may return null]
+Int [non-nullable type]
+Int? [nullable type]
+
+Functional Style:
+Filter, Map, Reduce
+
+Classes
+final by default
+there is no "new" keyword in kotlin [val car = Car()]
+
+Companion Objects :- it's a singleton object within a class.
+data classes :- to represent DTO's
+
+inheritance :- in kotlin if you want to inherit a class then you have to mark it as open because by default it's final
+Use delegation instead of inheritance.
+
+Delegation:-
+lazy			val temp by lazy { compute(7) } //Compute method only called when needed.
+to delegate		

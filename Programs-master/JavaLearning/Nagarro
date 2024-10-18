@@ -1,0 +1,109 @@
+-----What is parent tag in pom.xml-----
+-----Oops concept-----
+-----Marker interface, can we create custom marker interface, how to use it-----
+-----HashMap, Arraylist, Set  internal process-----
+-----Arraylist vs linked list-----
+-----Hashtable, HashMap-----
+-------------------------------------------------------What is API gateway-------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------Difference b/w @Controller and @RestController in spring-------------------------------------------------------
+
+@RestController(Spring 4.0) = @Controller + @ResponseBody 
+@Controller is specialized version of @Component
+@RestController is specialized version of @Controller(Spring 2.5)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------How manage Transaction between different microservices-------------------------------------------------------
+
+
+If we could split our system in such microservices, there's a good chance we wouldn't need to implement transactions between them at all.
+
+Follwing are the approach :-
+1. Two Phase commit protocall also called 2pc
+	1.1 Prepare phase :- 
+	1.2 Commit or rollback phase :- 
+2. XA Standard
+3. REST-AT Standard Draft
+4. Eventual Consistency and Compensation	
+--------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------Spring actuator-------------------------------------------------------
+
+monitoring tool
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+-----What is the difference between intermediate and terminal operations on Stream?-----
+-----Java 8 feature-----
+-----Functional interface, how to create and use it-----
+-----Http status code-----
+-------------------------------------------------------Difference in PUT and POST-------------------------------------------------------
+
+Method	Description						Idempotent	Safe	Example Use
+GET	Retrieve a URI						✓		✓	Loading a webpage
+HEAD	Retrieve a URI without the response body		✓		✓	Useful for debugging, or querying a resource to find metadata such as the size.
+POST	Submit data to a resource and create a new entity	✘		✘	Creating an article on a blog.
+PUT	Update all data in a resource entity			✓		✘	Updating all fields in an article on a blog (title and body).
+PATCH	Update some data in a resource entity			✘		✘	Updating only specific fields in an article on a blog (title only).
+DELETE	Remove a resource					✓		✘	Remove an article on a blog.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+-----About stream API-----
+-----Difference between @Service, @Component and @Repository-----
+-------------------------------------------------------@Pathvarible and @RequestParam-------------------------------------------------------
+
+@RequestMapping(value = "/{name}", method = RequestMethod.GET)
+    public String home(@PathVariable String name) {
+		return "Input name from client "+name+" using PathVariable";
+    }
+
+
+    @RequestMapping(method = RequestMethod.GET)
+	public String home2(@RequestParam String name) {
+    	return "Input name from client "+name+" using RequestParam";
+	}
+
+    @RequestMapping(value = "/home3", method = RequestMethod.GET)
+    public String home3(@RequestHeader String city) {
+        return "Input city from client "+city+" using RequestParam";
+    }
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------@Qulifier annotation-------------------------------------------------------
+
+Solve the ambiguity.
+
+@Autowired
+@Qualifier("fooFormatter")
+private Formatter formatter;
+
+alternate 
+
+@Primary
+public class FooFormatter implements Formatter
+
+alternate 
+
+@Autowired //Autowired by name
+private Formatter fooFormatter;
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+-----Why String is immutable in java-----
+-----Difference between metaspace and permgen-----
+-----Purpose of Singleton classes-----
+-----Bean Scope-----
+-----Multithreading, Concurrency-----
+-----ExcecutorService-----
+-----Design pattern-----
+-----SOLID principle-----
+-----Purpose of default and static method in java 8-----
+-----Difference in abstract class and interface in java 8-----
+-----SQL join, view and trigger-----
+-----How @Trancactional works in Spring Boot-----
+-----How multiple datasource(mysql, postgresql) configure in spring boot-----
+-----How to create custom Exception, try with resource-----
+
+

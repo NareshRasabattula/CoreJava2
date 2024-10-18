@@ -1,0 +1,4 @@
+1. Why AOP?
+Ans :- To overcome dependecies, for this we have different class and configuration file. and in the configuration file we can tell 
+      spring that whenever this method call that method should be called.
+      For example in banking application whenever update method called they insert method should be called.

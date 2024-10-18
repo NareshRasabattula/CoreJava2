@@ -1,0 +1,9 @@
+@ControllerAdvice("restExceptionHandler")
+public class RestExceptionHandler extends ResponseEntityExceptionHandler {
+
+    @ExceptionHandler(MeteringException::class)
+    fun handleMeteringException(me: MeteringException): ResponseEntity<Any> {
+        val apiResponseStatus = ApiResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                me.message, HttpStatus.INTERNAL_SERVER_ERROR.name)
+        return ResponseEntity(apiResponseStatus, HttpStatus.INTERNAL_SERVER_ERROR)
+    }

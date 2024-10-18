@@ -1,0 +1,423 @@
+1. What scenario did you faced which was abnormal
+a. Faced "Bag chunk header".
+b. new fresher joined the team and helped him with no idea on anaconda for python.
+
+
+1st Round (2 hours) 1. 16 Aptitude tests which contains  puzzles, math questions etc. Most of the questions from Quantitative Aptitude 
+by R.S.Agarwal 2. 14 Java Objective Questions. Very very easy as they are basic questions. 3. Find the maximum element in a null 
+terminated Linked list using recursions. Recursion is important. If the solution is not recursive, they would reject the solution.
+4. 1 Math Question. A B C + A B C + A B C C C C 1 Medium difficulty Puzzle 2nd Round (2 hours) 1. Why did you leave Company 1 and join
+Company 2 and so on till why do you want to leave the current Company? 2. Details on Tech used for the project and the explanation/usage
+of the architecture. 3. Do you J2EE, Jsp, HashMap etc 4. Design Data Connection Pooling in Java. We are expected to implement a library
+which will used by clients. They give a maximum of 45 minutes to solve this question 5. 1 puzzle. 3rd Round(1 hour) 1. Discussion on 
+projects and counter questioning on how could it be done in a better way. The interviewer was more interested in how I took part in 
+analyzing the problem. 2. 2 Simple puzzles and 1 Medium difficulty puzzle. 3. I have to move the Statue of Liberty from point A to B.
+How would you do it? This is basically to test your handle over the SDLC steps along with Problem Solving. I mentioned that it was a 
+logistic issue which has been solved by most people and I would be following the similar things to track my package's state and location.
+
+
+1. How does substring () inside String works?
+
+2. What is difference between Executor.submit() and Executer.execute() method ?
+
+3. What happens if an exception not caught?
+Ans ->  It leads to the termination of the program within which through when an uncaught exception results in the uncaughtException() method of the thread’s ThreadGroup,
+        it invokes.
+
+4. Write a comparator which can be used to compare any type of objects?
+
+----------------------------------------------CITI----------------------------------------------
+
+1. Overloading and overriding rules.
+2. Parent method throwing public and child is throwing protected is it valid.
+3. What is method signature.
+4. throws in method overloading.
+5. 
+        Class A {
+                public A getInstance(String c){
+                }
+        }
+6. why java does't support mutliple inheritace?        
+        Class B extends A {
+                public B getInstance(String c){
+                }
+        }
+        
+6. How to create immutable class.
+7. How will you resolve cycle dependency between two classes.
+8. Traversal of binary tree.
+9. How IOC container works.
+10. Bean scope in spring.
+11. what is DI in spring.
+12. Difference between HashMap, ConcurrentHashMap and synchronizedMap?
+
+
+----------------------------------------------Wissen----------------------------------------------
+
+1. Create this class as immutable.
+final class person {
+    private String name;
+    private List<String> decrese;
+
+    public person(String name, List<String> decrese) {
+        this.name = name;
+        this.decrese = decrese;
+    }
+    //get
+    //and in getter of decrese we will return coppied/duplicate object not actual object.
+}
+
+2. Is this thread safe?
+Class A {
+    public void synchronized m1() {
+        Thread.sleep(5000);
+    }
+    public static void main(String a[]) {
+        A o1 = new A();
+        A o2 = new A();
+
+        01.m1();
+        02.m1();
+    }
+}
+Answer :- Yes synchronized method is always thread safe.
+
+3. What is the execuation flow?
+class Parent {
+    public void walk() {
+        System.out.println("walk method of patent");//1
+    }
+    public void run() {
+        walk();
+        System.out.println("run method of patent");//3
+    }
+}
+
+public class Child extends Parent {
+    public void walk() {
+        super.walk();
+        System.out.println("walk method of child");//2
+    }
+    public void run() {
+        super.run();
+        System.out.println("run method of child");//4
+    }
+
+    public static void main(String[] args) {
+        Parent p = new Child();
+        p.run();
+    }
+}
+
+
+
+List<Integer> ints;
+
+4. sum of squra of all odd numberss
+
+ints.stream().filter(it -> it % 2 == 0).map(it -> it*it).sum()
+
+1 2 3 4 5 6 7 8 9 10
+
+2 4 6 8 10
+
+4 16 .... 100
+
+
+Table 
+5. BookAuthor (book(Unique), author)
+
+
+select author from BookAuthor having 10 < (select count(author) from BookAuthor group by book);
+
+
+Array of n Integer and a number k = 5
+
+1 2 3 4 5 6 7//2 pointer solution
+
+
+
+HashMap<Integer, Integer> map = {1,1, 2,2, 3,3, 4,4, 5,5, 6,6, 7,7}
+
+
+map.get(k-1)
+
+
+7 5 1 6 4 3 2
+
+2. There are hierarchy of class like super class and sub class. You have to make sure only one object 
+can be create for any class using new keyword. How you will impelement the class?
+
+3. The below code will iterate sequentially through 1 to 6. Can we iterate the same list alternatively so
+that it will print 1,3,5 with changing the while loop?
+
+List<Integer> list = Arrays.asList(1,2,3,4,5,6);
+Iterator it = list.iterator();
+while(it.hasNext()) {
+        System.out.println(it.next());
+}
+
+4. Read about multithreading deeply.....
+
+----------------------------------------------Wissen Final round----------------------------------------------
+1. SOLID principles 
+2. Blocking Queue
+3. Different implementation of executor service.
+4. Store procudure.
+
+5. Question :- Get Emp data in single shot.
+
+public interface Emp{
+
+void addEmp(int empId,String dept);
+
+void udpateEmp(int EmpId, String dept);
+
+List<EmpId> getEmpByDept(String dept);
+
+}
+
+class EmpImpl implements Emp {
+
+    Map<String, List<Integer>> employeeDB = new HashMap();
+
+    Map<Integer, String> employeeDB = new HashMap();
+
+    void addEmp(int empId,String dept) {
+        List<Integer> ids = employeeDB.get(dept);
+        ids.add(empId);
+        employeeDB.put(dept, ids);
+    }
+
+    void udpateEmp(int EmpId, String dept) {
+        employeeDB.put(EmpId, dept);
+    }
+
+    List<EmpId> getEmpByDept(String dept) {
+        Set<String> keys = employeeDB.keySet();
+            
+    }
+
+    public static void main(String[] args) {
+        
+    }
+}
+
+
+----------------------------------------------Emphasis----------------------------------------------
+1. Hibernate vs JPA.
+2. Spring Boot and Spring Batch
+3. Sleep vs wait
+4. PostMapping vs PutMapping
+5. JMS Queue
+6. Spring cloud
+7. Functional interfaces
+8. Stream API
+9. DateTime API 
+10. Comparable vs Comparator
+11. Collection hiearachy
+12. Exception hiearachy
+
+
+----------------------------------------------Tech Ed 1 - Preparation Material : Wissen Technology----------------------------------------------
+
+PFB pointers & prepare well
+1.       Inheritance, Polymorphism
+Java Collections
+
+
+2.       Design Principles and Patterns
+Spring, AOP, ORM
+REST, SOAP, Txn, Sessions, IO
+DB - Normalization, Joins, Simple Queries
+
+ 
+
+3.       SQL – Problem solving
+Data Structures & Algo - Write enqueue & dequeue for Queue
+DS & Collections - Population count
+
+ 
+
+4.       Design Principles and Patterns
+
+Java Collections(Problem Solving)
+
+Multithreading and concurrency
+
+ What is the difference between an abstract class and an interface?
+
+Data structures
+1 Find kth largest element in an array of unsorted elements?
+
+ Design
+1 What is a singleton pattern?
+2 Design a traffic signal in java?
+
+3 Design an emergency landing plane structure where the emergency plane has more priority?
+
+
+Time Complexities
+
+
+implement an immutable class
+
+Kadane Algorithm, find max sum in a subarray
+
+
+----------------------------------------------Tech Ed 1 - Preparation Material : Wissen Technology----------------------------------------------
+
+SQL
+DS & Algo - Pole Coloring problem - Given the number of poles and connections between them, color the poles so no two connected poles have the same color .
+Collections - Population count 
+
+Write code to get population counts based on input
+
+ 
+
+Design Principles and Patterns
+Spring, AOP, ORM
+
+GC, Serialization, Reflection, Lambdas DB - Normalization, Joins, Simple Queries
+
+ 
+
+Inheritance, Polymorphism
+Java Collections  
+
+ 
+
+Was able to implement enqueue & dequeue methods of queue.
+
+Design an emergency landing plane structure where the emergency plane has more priority?
+
+ 
+
+Find kth largest element in an array of unsorted elements? O(n log n)
+
+Time complexities
+
+ 
+
+Difference between an abstract class and an interface?
+
+ 
+
+Immutable class design. What happens when we use a collection inside it?
+
+ 
+
+write Junit for a sort method. Sort it by using decreasing order of frequency if any collision is there, sort it by value.
+
+----------------------------------------------Synechron----------------------------------------------
+1. What are the functional interfaces.
+2. Lambda expression
+3. Serialization with example and vice versa
+4. Singleton class with thread safe
+5. Overriding and Overloading rule
+6. Exception
+7. Java 7 and Java 8 features name them.
+
+
+---------------------------------------------------------capgemini---------------------------------------------------------
+1. How did you integrated UI to back-end.
+2. Find 10 max salary from list using stream API.
+3. why stream over collection.
+4. 
+
+------------------------------------------------------------Alrimetrics-------------------------------------------------------------
+
+Employee
+name 
+city
+
+List<Employee> eList;
+
+fetch name who in pune
+
+eList.stream().filter(obj->obj.getCity().equals("pune")).map(i->i.getName()).collect(Collector.list());
+
+
+
+"asdfghfgdfgfgggerttt"
+
+Map<String, Integer> map = new HashMap<>();
+
+for(int i=0;i<s.length();i++) {
+	if (map.containsKey(s.charAt(i)+"") {
+		int count = map.get(s.charAt(i)+"");
+		map.put(s.charAt(i)+"", ++count);
+	} else {
+		map.put(s.charAt(i)+"", 1);
+	}
+}
+
+
+What is cyclic dependency in spring and how to remove it
+why we use @service and @repository in spring
+@springbootapplication consist of which thing in it
+what are ioc container in spring
+@proxy use in spring
+
+what is cloneable 
+where is clone method
+how arraylist works internally
+concurrenthashmap vs synchronizedhashmap
+how many ways to create object in java.
+How can you get synchronized list.
+
+
+----------------------------------------Volkswagen---------------------------------------------
+1. What is idempotent method in rest.
+2. JPA hibernate spring data relationship how to use JPA.
+3. What is @SpringBootApplication consists of?
+4. Marker interfaces?
+5. Serialization and what is the significant of serial version id?
+6. transient & will static variable part in Serialization?
+7. 
+3. final class Person implemets serilizable{
+	private trasient int id ;
+	private String name;
+	
+	public Person(int id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public int getName() {
+		return name;
+	}
+	
+	public List<Integer> getLIst(List<Integer>) {
+		return list;
+	}
+	
+	public List<String> getLIst(List<String>) {
+		return list;
+	}
+	
+	//obj.getLIst(null);
+	
+}
+
+List<Person> persons
+
+Collections.sort(persons, new Comparator<person> {
+	public int compare(person p1, person p2) {
+		return p1.id - p2.id;
+	}
+})
+
+persons.stream().sort((p1, p2)-> p1.id - p2.id).Collect(Collectors.toList());
+
+Employee  id, name, salary
+
+select * from Employee sort by salary DESC;
+
+
+
+

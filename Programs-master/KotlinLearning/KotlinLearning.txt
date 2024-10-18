@@ -1,0 +1,13 @@
+1. Why to use kotlin?
+
+Ans :-
+a. Concise [Drastically reduce the amount of boilerplate code].
+b. Safe [Avoid entire classes of errors such as null pointer exceptions] [Kotlin protects you from mistakenly operating on nullable types       if try to access any value of object which can be null then the program won't compile].
+c. Introperable [Leverage existing libraries for the JVM, Android, and the browser][ Use any existing library on the JVM, as there’s 100%       compatibility, including SAM support].
+d. Tool-friendly [Choose any Java IDE or build from the command line]
+
+
+Kotlin is compile down to javascript and java both.
+statically typed
+
+

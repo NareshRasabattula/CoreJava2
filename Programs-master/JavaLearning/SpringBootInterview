@@ -1,0 +1,8 @@
+--------------------Spring Boot Features--------------------
+1. AutoConfiguration :- Spring Boot auto-configuration makes more than 200+ such decisions and 
+                        automatically configures many functionalities by examining JAR dependencies. 
+                        For example, if spring-mvc.jar is present, then it can automatically configure DispatcherServlet, InternalViewResolver, etc.
+                        
+2. Starter POMs :- Instead of adding these (spring-core.jar, spring-web.jar, spring-webmvc.jar, jackson-databind.jar, tomcat-embed-core.jar,
+                    tomcat-embed-el.jar, tomcat-embed-logging-juil.jar) you can get all of these by just adding spring-boot-starter-web dependency in your pom.xml.                        
+

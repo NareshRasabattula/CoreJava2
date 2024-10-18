@@ -1,0 +1,53 @@
+1. Full Binary Tree -> Each node has exactly zero or two children.
+
+2. Compelete Binary Tree -> A binary tree, which is completely filled with the possible exception of the bottom level, which is
+    filled from left to right.
+    
+3. When to use AVL tree and when to use Red-Black tree?
+    Ans :- If searching is frequent then we should you AVL tree,
+           and if Modification is frequest then we should you Red-Black tree.
+           
+4. Design Data structure which give 0(1) time complexity in all CURD opearation.       
+    Ans :- For this requirement what we will do is we will create a array of same size as original array.
+    and while inserting or deleting value we will insert true or false in another array. And value of the 
+    array can be get by index only so before checking the value in original array we first see the value
+    of another array is true or false. If it is false then value has been deleted and if it is returning
+    true it means value is present in the array. By this technique we can achive the 0(1) complexity.
+   
+    https://www.geeksforgeeks.org/data-structure-n-elements-o1-operations/
+   
+5. How find that is there cycle in LinkedList?
+
+6. Find the middle of a given linked list?
+    Method 1:
+        Traverse the whole linked list and count the no. of nodes. Now traverse the list again till count/2 and return the node at count/2.
+    Method 2:
+        Traverse linked list using two pointers. Move one pointer by one and other pointer by two. When the fast pointer reaches end slow 
+        pointer will reach middle of the linked list.
+        
+7. Height vs Depth of tree?
+    The depth of a node is the number of edges from the node to the tree's root node.
+    A root node will have a depth of 0.
+
+    The height of a node is the number of edges on the longest path from the node to a leaf.
+    A leaf node will have a height of 0.
+        
+How do you reverse a linked list?
+How do you reverse a singly linked list without recursion? (solution)
+How are duplicate nodes removed in an unsorted linked list? (solution)
+How do you find the length of a singly linked list? (solution)
+How do you find the third node from the end in a singly linked list? (solution)
+How do you find the sum of two linked lists using Stack? (solution)
+How do you reverse a linked list in place? (solution)
+How to add an element at the middle of the linked list? (solution)
+How do you sort a linked list in Java? (solution)
+What is the difference between array and linked list? (answer)
+How to remove Nth Node from the end of a linked list? (solution)
+How to merge two sorted linked list? (solution)
+How to convert a sorted list to a binary search tree? (solution)
+Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x. (solution)
+How to remove duplicates from a sorted linked list? (solution)
+How to find the node at which the intersection of two singly linked lists begins. (solution)
+How to check if a given linked list is a palindrome? (solution)
+How to remove all elements from a linked list of integers which matches with given value? (solution)    
+    

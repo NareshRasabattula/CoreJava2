@@ -1,0 +1,9 @@
+Service layer test must write first
+
+integration test :- involve more than one module (service-> dao)
+unit test :- for specific class
+
+MVC controller returns ViewModel 
+while REST controller return JSON or XML
+
+DBUnit

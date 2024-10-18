@@ -1,0 +1,128 @@
+0. Volatile VS Atomic
+  Ans :- Volatile only ensures that the access is atomically, while Atomics ensure that the operation is atomically. 
+
+1. What is deamon thread ?
+  Ans :- It is a thread which runs in background, to create any thread as deamon thread just call setDeamon(true) method and to 
+    check if this is deamon thread or not then call inDeamon() method.
+    
+2. Why thread communication methods wait(), notify() and notifyAll() are in Object class?
+  Ans :- In the Java language, you wait() on a particular instance of an Object – a monitor assigned to that object to be precise. 
+    If you want to send a signal to one thread that is waiting on that specific object instance then you call notify() on that object.
+    If you want to send a signal to all threads that are waiting on that object instance, you use notifyAll() on that object.
+
+    If wait() and notify() were on the Thread instead then each thread would have to know the status of every other thread. 
+    How would thread1 know that thread2 was waiting for access to a particular resource? If thread1 needed to call thread2.notify() 
+    it would have to somehow find out that thread2 was waiting. There would need to be some mechanism for threads to register 
+    the resources or actions that they need so others could signal them when stuff was ready or available.
+
+3. Why wait(), notify() and notifyAll() methods have to be called from synchronized method or block?
+  Ans :- When a Thread calls wait() on any Object, it must have the monitor on the Object that it will leave and goes in wait state until 
+    any other thread call notify() on this Object. Similarly when a thread calls notify() on any Object, it leaves the monitor on the
+    Object and other waiting threads can get the monitor on the Object. Since all these methods require Thread to have the Object
+    monitor, that can be achieved only by synchronization, they need to be called from synchronized method or block.
+
+4. Why Thread sleep() and yield() methods are static?
+  Ans :- Thread sleep() and yield() methods work on the currently executing thread. So there is no point in invoking these methods on 
+    some other threads that are in wait state. That’s why these methods are made static so that when this method is called statically,
+    it works on the current executing thread and avoid confusion to the programmers who might think that they can invoke these 
+    methods on some non-running threads.
+    
+5. Join method best example.....
+
+
+public class JoinMethodWorkingInThread {
+
+	public static void main(String args[]) throws InterruptedException {
+		
+		//Planning Start
+		Planning planning = new Planning();
+		Thread planningThread = new Thread(planning);
+		planningThread.start();
+		//Planning End
+		
+		//Development Start
+		Development development = new Development();
+		Thread developmentThread = new Thread(development);
+		planningThread.join();
+		developmentThread.start();
+		//Development End
+		
+		//Testing Start
+		Testing testing = new Testing();
+		Thread testingThread = new Thread(testing);
+		developmentThread.join();
+		testingThread.start();
+		//Testing End
+	}
+
+}
+
+class Planning implements Runnable {
+
+	@Override
+	public void run() {
+		System.out.println("Planning...");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Planning Completed");
+	}
+	
+}
+
+class Development implements Runnable {
+
+	@Override
+	public void run() {
+		System.out.println("Development...");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Development Completed");
+	}
+	
+}
+
+class Testing implements Runnable {
+
+	@Override
+	public void run() {
+		System.out.println("Testing...");
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Testing Completed");
+	}
+	
+}
+
+6. Diff between callable and runnable?
+
+Runnable                                Callable
+1. Run(), Start()                       1. Call(), Submit()
+2. Can't return value                   2. Returns future object
+3. Can't throw checked exception        3. Can throw checked exception
+4. Java 1.0                             4. Java 1.5
+
+7. Semaphore vs Mutex
+Mutex is a object owned by thread, so there is a ownership in mutex. Mutex allow only one thread to access resources.
+Semaphore is singnaling mechanism. It allows a number of thread to access shared resources.
+
+8. CyclicBarrier VS CountDownLatch
+If you look at CyclicBarrier it also does the same thing but it is different you can not reuse CountDownLatch once the count reaches zero while 
+you can reuse CyclicBarrier by calling the reset() method which resets Barrier to its initial State.
+
+ * <p>A {@code CountDownLatch} is initialized with a given <em>count</em>.
+ * The {@link #await await} methods block until the current count reaches
+ * zero due to invocations of the {@link #countDown} method, after which
+ * all waiting threads are released and any subsequent invocations of
+ * {@link #await await} return immediately.  This is a one-shot phenomenon
+ * -- the count cannot be reset.  If you need a version that resets the
+ * count, consider using a {@link CyclicBarrier}.
+

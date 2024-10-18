@@ -1,0 +1,10 @@
+1. Explain project.
+2. Implement custom cache and how will you make sure at a time only 10 element should be there and it should remove element which is old and if i want to 
+  delete any element then also it should be fine.
+3. Array question 
+[1,2,5,3,0]
+
+so 5 is the element so the sum of before 5 and sum of after 5 is equals.
+1+2 = 3
+
+3+0 = 3

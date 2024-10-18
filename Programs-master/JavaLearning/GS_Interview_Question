@@ -1,0 +1,11 @@
+1. Given 2 ascending sorted arrays, merge the arrays into a single array. 
+Follow Up : 
+  1.1  Modify the code to sort the array in descending order. 
+  1.2  Time complexity and space complexity 
+
+2. Given an array and sum k, find all the pairs where sum is equal to k. 
+Follow Up:  
+  2.1  Provide brute force and optimized approach both 
+  2.2  Based on the approach asked about the time and space complexity. 
+
+3. Indepth HashMap internals

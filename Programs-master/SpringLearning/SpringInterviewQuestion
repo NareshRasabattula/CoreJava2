@@ -1,0 +1,14 @@
+1. Diff between Bean and POJO.
+Ans :- (1) A JavaBean follows certain conventions. Getter/Setter naming, having a public default constructor, being serialisable.
+       (2) A POJO(plain-old-java-object) is not rigorously defined. It is a java object that does not have a requirement to implement a 
+            particular interface or derive from a particular base class, or make use of particular annotations in order to  be compatible 
+            with a given framework, and can be any arbitary/simple java object.
+            
+2. Diff between setter and constructor injection.
+Ans :- (1) It is mandatory to use autowired annotation if using setter injection but it's not ture for constuctor injection.
+
+3. why it's mandatory to use autowired annotation on setter method?
+Ans :- The reason it's mandatory to use the @Autowired annotation on the setter method in Spring is because 
+       it's a signal to Spring that the method should be used for dependency injection. If you don't use the @Autowired annotation, 
+       Spring won't know to inject the dependency and the setter method won't be called.
+       But constructor will always get called while object creation.

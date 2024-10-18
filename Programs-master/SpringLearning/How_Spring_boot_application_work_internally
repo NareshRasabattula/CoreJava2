@@ -1,0 +1,73 @@
+spring.boot.starter.web dependency comes with so many build in jar's below is some list :-
+Tomcat
+Junit
+JSON Marshaller
+SLF4J
+Spring libraries (Core, Aop, Bean, context and others)
+Snake YAML
+
+@SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan
+
+@Configuration is alternative of @Bean
+
+META-INF/spring.factories
+1. Enable
+2. Disable
+
+Based on @Conditional/@Profiler
+
+How this @Conditional works is that in anyclass if you want to create bean on some condition like create only when the dependent class bean is present only.
+Some example of conditions :- (OnBeanCondition, OnClassCondition, OnJavaCondition, OnWebApplicationCondition)
+
+This part comes under auto configuration feature.
+
+SpringApplication.run(...) :- From the run method, the main application context is kicked off which in turn searches for the classes annotated with 
+@Configuration, initializes all the declared beans in those configuration classes, and stores those beans in JVM, specially in space inside JVM which 
+is known as IOC container. After creation of all the beans, automatically configures the dispatcher servlet and registers the default handler mappings,
+messageconverts and all other basic things.
+
+@EnableAutoConfiguration :- 1. Allow for configuration classes to be scanned dynamically.
+                            2. Driven off spring.factories
+                            3. @AutoConfigurationBefore and @AutoConfigurationAfter
+                            
+*Property Based Configuration*
+1. application.properties or application.yaml
+2. Enviroment Variable
+3. Command-line parameter
+4. Cloud Configuration 
+
+*Bean Configuration*
+Adding bean to default application class
+Adding bean to separate configuration class
+Importing XML-based configuration
+Component Scanning
+
+----------------------------------------------------------------------------------------
+
+*Spring Profiles*
+Can do it using two ways application.yaml or application.properties
+spring.profiles
+
+How to Engage profile
+spring.profiles.active
+Inject via command line or envirnment variable
+
+Below is the example how we can set profile and use it.
+application.yaml
+spring:
+  profiles: dev
+server:
+  port: 8000
+---
+spring:
+  profiles: test
+server:
+  port: 8009
+  
+And then set envirnment variable  spring.profiles.active = dev/test to see the diff while running the application.
+
+2. Follow below steps to work with spring profile using env specific application.properties files
+  2.1 Create two files application-dev.properties and application-test.properties file and add (server.port=8084) and (server.port=8085) diff port in both file.
+  2.2 Set Env veriable like spring.profiles.active=dev/test
+
+----------------------------------------------------------------------------------------

@@ -1,0 +1,13 @@
+Binary Tree
+
+Root, Edge, Leaf, Subtree, Depth, Height, Height of Tree
+
+Full Binary Tree :- 0 or 2 child 
+
+Complete Binary Tree :- All the leaf element must lean towards left.
+
+Perfect Binary Tree :- Internal node have two childern and all leaf should be at the same level.
+
+Balanced Binary Tree :- Need more understanding.
+
+Diameter of a Binary Tree also called as width of tree :- is the number of nodes on the longest path between two end nodes

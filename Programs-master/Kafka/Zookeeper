@@ -1,0 +1,18 @@
+docker exec -it zookeeper /bin/bash
+
+cd opt/bitnami/zookeeper/bin
+
+./zkCli.sh (to log into zookeeper client)
+
+ls / 
+To see all the brokers available
+
+ls /brokers/ids
+
+
+
+get /brokers/ids/1001
+
+ls /brokers/topics
+
+get /brokers/topics/kafka.learning.tweets

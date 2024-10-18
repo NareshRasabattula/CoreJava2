@@ -1,0 +1,34 @@
+which state of thread constanly chagne with regard to one another?
+Maven dependency scope
+can callable throw checked exception
+the state of the thread involveds in synchonization contaly chagne with regards to one another
+can body of a lamda expression can contain zero or one statement
+can we have final method in abstract class
+On which of these can annotations be used on in Java 8?
+types of executor framework
+
+-------------------------------------------First Round-------------------------------------------
+1. Linear vs Non-Linear data structure
+2. Find min of stack
+3. Pre-order, post-order and In-order traversal of tree
+4. Sorting Quick and Merge sort with complexity.
+5. Binary Tree vs Binary Search Tree.
+6. What is depth and height of tree.
+7. HashMap vs TreeMap
+8. Java8 new feature.
+9. What is lambda expression and why we use it.
+10. Functional Interface.
+11. Custom immutable class and how will you create it.
+12. Why SpringBoot?
+13. Explain annotation of SpringBoot.
+14. @ResponseBody vs @ResponseEntity
+15. What is profiling in SpringBoot.
+16. TDD Approach.
+17. Sonar
+18. Sprint agile.
+19. ACID properties.
+20. Check if two strings are anagram or not using map. 
+    Ans :- We can have one map first iterate in first string and add count and then take second string and reduce count if count is zero for each element then return true.
+21. SubSet sum.    
+    
+    

@@ -1,0 +1,17 @@
+1.
+
+public static void main(String[] args) {
+		new Practic().display(10);
+	}
+public void display(Integer i) {System.out.println("Integer");}
+public void display(Object i) {System.out.println("Object");}
+public void display(int i) {System.out.println("Int");}
+public void display(int...i) {System.out.println("Int...");}
+
+Output :- Int
+
+Because int i's method priority in high then Integer i's method and int...i method will have last priority.
+
+Note :- 
+1. Widening a smaller primptive value to bigger primpitive type.
+2. Narrowing a wider/bigger primptive type value to a smaller type value.

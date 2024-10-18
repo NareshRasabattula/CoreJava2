@@ -1,0 +1,15 @@
+ There exist many tools you can use to extract various bits of preliminary information from your running JVM.
+JPS :- Will list out each and every JVM process running on your machine, along with each process’ PID .
+jmap –histo:live 45417 :- jmap will make a complete dump of the application’s heap memory for prcess PID = 45417.
+VisualVM :- 
+BTrace :-
+Eureka :-
+
+
+                                         Heap Memory
+                  Yount Generation        Old Generation        Permanent Generation
+                  Eden
+                  S0
+                  S1
+                  
+                  

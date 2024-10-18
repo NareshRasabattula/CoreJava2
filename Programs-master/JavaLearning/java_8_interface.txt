@@ -1,0 +1,25 @@
+java 8 interface can have Default and Static methods.
+
+1. Default Method -> 
+
+a. This allow us to add new method in interface that are automatically available in implementation.
+b. Implicitly public that means no need to write public keyword.
+c. By using default method we can have backward compatibility neatly preserved.
+d. To incrementally provide additional functionality to given type without breaking down the implementation classes.
+
+Note -> If more that one interfaces are having same default method then it is mandatory to override that method in implemented classes other wise you will
+get compile time error.
+
+2. Static Method -> 
+
+a. Static interface method increse the degree of cohesion (cohesion is a relation between elements inside a module)
+b. If we are defining static method in our interface then we don't need to create util classes.
+
+
+Abstract class vs java8 interface
+1. Abstract class can have state but interface can't have state because it doesn't have instance variables.
+2. Abstract class can have constructor but interface can't have constructor.
+3. W can't replace abstract class with interface because java doesn't support multiple inheritance.
+
+What is the need of constructors in abstract class?
+To initialise instance variable and this constructor call in constructor chaining.

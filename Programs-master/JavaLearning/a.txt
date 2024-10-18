@@ -1,0 +1,12 @@
+Types of GC
+1. Serial GC
+2. Parallel GC
+3. Z GC
+4. G1 GC
+5. CMS(Concurrent mark sweep) GC
+
+
+Heap
+	Young generation (Eden, s0, s1)
+	Old generation
+	permanent generation

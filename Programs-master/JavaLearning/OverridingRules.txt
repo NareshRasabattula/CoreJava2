@@ -1,0 +1,49 @@
+1. The overriding method must have same signature, which includes, method name and the argument list.
+2. Return type should be same or covarient type is allowed.
+2. The overriding method can not have more restrictive access modifier.
+3. The exception thrown by the overriding method should be same or child of the parent method.
+4. If we are overriding static method then it will call method on the basis of decleared object
+    Example :- Base b = new Child();
+               b.staticMethod(); // This will call static method of Base class.
+               
+Other Rules :-
+1. The choice of which overloaded that should be called is decided at compile time itself. The reference type (Type of the reference variable and not the actual type of the object it is pointing to) decides which overloaded method is invoked.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+class MySuper {
+    String str1 = "x";
+    public MySuper() {
+        myMethod();
+    }
+    void myMethod() {
+        System.out.print(str1);
+    }
+}
+public class Practic extends MySuper {
+    String str2 = "y";
+    public Practic() {
+        super();
+    }
+    void myMethod() {
+        System.out.print(str2);
+    }
+    public static void main(String[] args) {
+        MySuper mySub = new Practic();
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.markbdsouza.polymorphism;
+
+interface Movable {
+   void move();
+}
+class Fish implements Movable {
+   void move(){System.out.println("swims");}
+}
+public class Level2 {
+    public static void main(String[] args) {
+        Movable fish = new Fish();
+        fish.move();
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------

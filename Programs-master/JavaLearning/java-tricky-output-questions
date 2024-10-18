@@ -1,0 +1,65 @@
+---------------------------------------------1--------------------------------------------------
+
+public static void main(String[] arr){ 
+        Integer num1 = 100; 
+        Integer num2 = 100; 
+        Integer num3 = 500; 
+        Integer num4 = 500; 
+          
+        if(num1==num2){ 
+            System.out.println("num1 == num2"); 
+        } 
+        else{ 
+            System.out.println("num1 != num2"); 
+        } 
+        if(num3 == num4){ 
+            System.out.println("num3 == num4"); 
+        } 
+        else{ 
+            System.out.println("num3 != num4"); 
+        } 
+    } 
+    
+Output :- num1 == num2
+          num3 != num4    
+          
+---------------------------------------------2--------------------------------------------------          
+
+class Super {
+    public Integer getLength() {
+        return new Integer(4);
+    }
+}
+public class Sub extends Super {
+    public Long getLength()    {
+        return new Long(5);
+    }
+    public static void main(String[] args) {
+        Super sooper = new Super();
+        Sub sub = new Sub();
+        System.out.println(sooper.getLength().toString() + ", " + sub.getLength().toString());
+    }
+}
+
+Output :- Compilation Error
+
+---------------------------------------------3--------------------------------------------------
+
+String s1 = "abc";
+String s2 = s1.toString();
+String s3 = s1.toLowerCase();
+String s4 = s1.toUpperCase();
+
+sop(s1 == s2);
+sop(s1 == s3);
+sop(s1 == s4);
+
+
+---------------------------------------------4--------------------------------------------------
+
+String s1 = new String("abc");
+String s2 = s1.toLowerCase();
+String s3 = s1.toUpperCase();
+
+sop(s1 == s2);
+sop(s1 == s3);

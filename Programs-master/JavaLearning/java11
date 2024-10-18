@@ -1,0 +1,11 @@
+1. Introduced new method to String class (isBlank, lines, strip, stripLeading, SpripTrailing, repeat)
+  1.1 isBlank = It's advanced version of isEmpty() by checking,  s (space) and the \t, \n, \r, and \f escape sequences
+  1.2 lines = Convert string to list of string if there is any \n present.
+  1.3 strip = remove leading and trailing spaces from string, it's higher version of trim(). trim() only supports 
+              200 Unicode but this support all Unicode.
+  1.4 repeat = It will return concanating of the same string with N'th time.
+
+2. It's become easier to read and write string from file.
+   2.1 They have introduced new static method like readString, writeString from Files.class
+
+3. 

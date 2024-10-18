@@ -1,0 +1,165 @@
+1. How to convert list of object to map?
+
+   createPeople().stream().
+   .collect(toMap(Person::getName, Person::getAge));
+                     or
+   createPeople().stream().
+   .collect(toMap(person -> person.getName(), person -> person.getAge()));
+
+Note -> where createPeople() is a method which will retrun a list of person object which is having two attributes (Name and Age).
+
+2. How to get comma separate value for a list of object?
+
+   createPeople().stream()
+      .filter(person -> person.getAge() > 30)
+      .map(Person::getName)
+      .map(String::toUpperCase)
+      .collect(joining(", "))
+
+3. What is partitioningBy() method?
+   To take a collection and split it into two different parts and we can use various criteria to do this.
+   
+   createPeople().stream()
+      .collect(partitioningBy(person -> person.getAge() % 2 == 0))
+      
+4. https://medium.com/javarevisited/java-8-parallel-stream-java2blog-e1254e593763      
+
+5. Map and FlatMap is for transformation of given collection.
+Example :- let say you have give list of student and student contains name and list of marks. 
+Now you asked to add 10 in each student marks in each subject and return updated list of students.
+
+Answer :-
+List<Student> result = students.stream().map(it -> new Student(it.name, it.marks.stream().map(ti->ti+10).toList())).toList();
+
+6. What is the uses of flatmap function.
+if list<list> something kuch he and usko iterate krna he to flatmap use kr skte he
+Flattening is referred to as merging multiple collections/arrays into one
+Here is the example :- Get the unique surnames in uppercase of the first 15 book authors that are 50 years old or older.
+
+        List<String> result = libraries.stream()
+                .flatMap(it -> it.books.stream())
+                .map(it -> it.author)
+                .filter(it -> it.age>28)
+                .map(it -> it.surname)
+                .collect(Collectors.toList());
+
+7. Print out the sum of ages of all female authors younger than 25.
+
+        int result = libraries.stream()
+                .flatMap(it -> it.books.stream())
+                .filter(it -> it.author.age<25)
+                .filter(it -> it.author.gender.equals("Female"))
+                .map(it -> it.author.age)
+                .reduce(0, Integer::sum);
+
+8. Given a list of integers, separate odd and even numbers?
+2) How do you remove duplicate elements from a list using Java 8 streams?
+3) How do you find frequency of each character in a string using Java 8 streams?
+4) How do you find frequency of each element in an array or a list?
+5) How do you sort the given list of decimals in reverse order?
+6) Given a list of strings, join the strings with ‘[‘ as prefix, ‘]’ as suffix and ‘,’ as delimiter?
+7) From the given list of integers, print the numbers which are multiples of 5?
+8) Given a list of integers, find maximum and minimum of those numbers?
+9) How do you merge two unsorted arrays into single sorted array using Java 8 streams?
+10) How do you merge two unsorted arrays into single sorted array without duplicates?
+11) How do you get three maximum numbers and three minimum numbers from the given list of integers?
+12) Java 8 program to check if two strings are anagrams or not?
+13) Find sum of all digits of a number in Java 8?
+14) Find second largest number in an integer array?
+15) Given a list of strings, sort them according to increasing order of their length?
+16) Given an integer array, find sum and average of all elements?
+17) How do you find common elements between two arrays?
+18) Reverse each word of a string using Java 8 streams?
+19) How do you find sum of first 10 natural numbers?
+20) Reverse an integer array
+21) Print first 10 even numbers
+22) How do you find the most repeated element in an array?
+23) Palindrome program using Java 8 streams
+24) Given a list of strings, find out those strings which start with a number?
+25) How do you extract duplicate elements from an array?
+26) Print duplicate characters in a string?
+27) Find first repeated character in a string?
+28) Find first non-repeated character in a string?
+31) How do you get last element of an array?
+
+----------------------------------------------------------------------------------------------------------------------------------
+1. Consumer and Supplier example
+    public static void main(String[] args) {
+        Supplier<String> supplier = new Supplier() {
+            @Override
+            public String get() {
+                return "String";
+            }
+        };
+
+        Consumer<String> consumer = new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        };
+        Stream.generate(supplier).forEach(consumer);
+    }
+
+2. Diff way of creating a stream and Consumer example
+      public static void main(String[] args) {
+        Stream<Integer> numbers = Stream.of(20,45,85,65,74,15,49,73);
+
+        Consumer<Integer> consumer = new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) {
+                System.out.println(integer);
+            }
+        };
+
+        numbers.forEach(consumer);
+    }
+
+3. //Map vs Peek method
+    /*
+        Peek we use for debug purpose, and map used for transforming a value to diff form
+        Why peek can not replace map?
+        Because map accept a Function FI(which returns a value) while peek accepts a Consumer FI(which does not return a value)
+        Note :- Peek is intermediate operation so if there is no terminal operation then it won't do anything.
+     */
+
+    public static void main(String[] args) {
+        Integer[] numbers = {2, 3, 4, 5};
+
+        Function<Integer, Integer> function = new Function<Integer, Integer>() {
+            @Override
+            public Integer apply(Integer integer) {
+                return integer * integer;
+            }
+        };
+
+        Stream.of(numbers).map(function).forEach(System.out::println);
+        System.out.println("Map Done...Starting Peek");
+
+        Consumer<Integer> consumer = new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) {
+                integer = integer * integer;
+            }
+        };
+
+        Stream.of(numbers).peek(consumer).forEach(System.out::println);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

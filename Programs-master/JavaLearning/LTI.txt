@@ -1,0 +1,51 @@
+
+@RestController
+Class Student {
+	@GetMapping("/getStu/id")
+	public Student getStudent(int id) {
+		//api call return student
+	}
+}
+
+@Autowire
+@Qualfier("abcstudnee")
+Strudent std;
+
+
+@Bean("abcstudnee")
+public Student getStudent(){
+	return Student(1,abc)
+}
+
+@Bean("axyzstudnee")
+public Student getStudent() {
+	return Student(2,asdfsdf)
+}
+
+Employee (e_id, e_name) 
+	101	a
+	102	b
+	103 	c
+Company (c_id, c_name, e_id)
+	201	LTI	101
+	202	CAP	102
+	201 	LTI	103
+
+
+select c_id , c_name, count(e_id) from Company c where c_name='LTI' group by e_id;
+
+201 LTI 10
+
+
+
+String s1 = "Sweta";
+String s2 = "Swati";
+
+if (s1 == s2)//false
+if (s1.equals(s2))//false
+
+
+
+
+
+

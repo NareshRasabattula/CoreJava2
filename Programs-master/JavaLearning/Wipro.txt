@@ -1,0 +1,10 @@
+1. Idempotent method
+2. Can we use @PostMapping instead of @DeleteMapping ? 
+3. How stream internally works will it create duplicate copy of list or it will work on original list?
+4. Memory architecture
+5. Where static variables get created in memory?
+6. Serialization ? and what is serial version Id
+7. Java plateform independent.
+8. How spring boot loads Dispatcher servlet and other important things.
+9. Can we throw exception from stream filter.
+10. Can we throw exception from for each loop?

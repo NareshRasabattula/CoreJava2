@@ -1,0 +1,183 @@
+Overriding 
+1. Method signiture is all about method parameter, name only.
+
+2. wait(), notify(), notifyAll() methods we can use only in synchronized block.
+
+3. Composition is strong entity and Aggregation is weak entity.
+
+4. Object class methods (toString(), equals(), hashCode(), wait(), notify(), notifyAll(), clone(), finalized(), getClass()).
+
+5. Overriding rule for throws keyword.
+	(5.1) -> If parent method is throwing checked exception then in overriding method we can throws (Unchecked, Child, Same).
+	(5.2) -> If parent method is throwing Un-checked exception then in overriding method we can throws (Parent, Child, Same).
+	(5.3) -> Child method can not throws checked exception if parent class method is not throwing same or parent exception 
+			 in this case we will get compile time error.
+	(5.4) -> But in case of un-checked exception point number (5.3) is not applicable.
+	
+6. Overriding rule for return type of overridden method.
+	(6.1) -> If parent class method is returning String object then overridden method can not return void.
+	(6.2) -> If parent class method is returning Object type object then overridden method can return any type object or void.
+	
+7. Which of the following methods make thread leave the running state?
+	wait()
+	sleep(1000)
+	Thread.join()
+	
+8. Assume the following method is properly synchronized and called from a thread A on an object B:
+   wait(2000);
+   After calling this method, when will the thread A become a candidate to get another turn at the CPU?
+   
+   ANS:- After thread A is notified, or after two seconds.
+   
+9. Which of these points will be valid If superclass method does not throw any exception
+	a.overridden method of subclass can throw any RuntimeException 
+	b.overridden method of subclass cannot throw any checked exception
+	c.overridden method of subclass may not throw any exception.
+	d.All
+	
+10. If you are creating any string at run time then it will create string in HEAP area 
+	Example :- 
+		String s = "vaibhav"; //object will creat in SCP(String Constant Pool)
+		s.concat("jain"); //object vaibhavjain will be created in HEAP area becuase we are creating it at run time.
+
+11. Private >> Default >> Protected >> Public
+	a. private can be accesable inside class itself.
+	b. default can be accesable inside package.
+	c. protected can be accesable inside subclass.
+	d. public can be accesable in everywhere in the application.
+	
+12. Serialization :- Is the process of converting object into persistance state.
+	a. So basically if any variable in "transient" then it will not participate in serialization process, so if you wirte any
+		transient object and again read it then it will return null.
+	b. To make any class Serializable we need to implement "Serializable" interface.
+	c. And using ObjectOutputStream,ObjectInputStream we can perform read and write operations.
+	
+13. An interface can have inner class.
+
+14. Ad-hoc polymorphism is method overloading.
+
+15. Inner class can extends exactly one class or implements only one interface.
+
+16. How to create immutable custome class?
+	a. Make your class final, so that no other classes can extend it.
+	b. Make all your fields final, so that they’re initialized only once inside the constructor and never modified afterward.
+	c. Do not provide setter method just provide getter method.
+	d. When exposing methods which modify the state of the class, you must always return a new instance of the class
+	e. Inside the constructor, make sure to use a clone copy of the passed argument and never set your mutable field to the real 			instance passed through constructor, this is to prevent the clients who pass the object from modifying it afterwards.
+	f. Make sure to always return a clone copy of the field and never return the real object instance.
+	
+17. We can declare same variabl in method which is declared in class level.
+	Example :- 
+		class Sample {
+			int i = 10;
+			public void testMethod() {
+				int i = 20;
+			}
+		}
+		
+18. Break statement can only be used with loop or switch. So, using break with if statement causes “break outside switch or loop” error.
+	Example :- 
+		class Sample {
+			public static void main(String args[]) {
+				if(true)
+				   break;
+			}
+		}
+		
+19. If you are only declaring a variable as find and not assigning any value then you can assign it's value into the constructor block.
+	but if you have already assigned the value at the time of declaration then you can not assign into the constructor block.
+	Example :- 
+		Class Sample{
+			public static void main(String args[]){
+				final int i;
+				public Sample(int i){
+					this.i = i;//This is valid
+				}
+			}
+		}
+		
+		
+		Class Sample{
+			public static void main(String args[]){
+				final int i = 10;
+				public Sample(int i){
+					this.i = i;//This is In-valid
+				}
+			}
+		}
+		
+20. Autoboxing and Unboxing in java?
+	Autoboxing ->  Converting a primitive value into an object of the corresponding wrapper class is called autoboxing.
+	Unboxing   ->  Converting an object of a wrapper type to its corresponding primitive value is called unboxing.
+	
+21. If superclass does nto contain no-arg constructor but contain argument constructor.
+	Than compiler won't provide no-arg constructor.
+		
+22. Abstract class also have constructor, and hence constructor are called when object of concrete subclass is created, because abstract 	class cannot be instantiated directly.
+
+23. A concrete class is a class that has an implementation for all of its methods. They cannot have any unimplemented methods. It can          also extend an abstract class or implement an interface as long as it implements all their methods.
+
+24. 
+	class ParentOfSample{
+		public int a = 10;
+	}
+
+	public class Sample  extends ParentOfSample{
+		public int a = 5;
+		public static void main(String[] args) {
+			ParentOfSample p = new Sample();
+			System.out.println(p.a);
+		}
+	}
+	
+25. Diff between functional programming and OOPS ?
+
+26. How you will use Employee(id,name) as a key in HashMap where id is always unique. And why it was returing null please see...
+
+27. Swap two numbers without using third variable.
+
+28. How you will stop to create duplicate object in custom immutable class.
+
+29. 
+
+	public static void main(String[] args) {
+		Map<Employee,String> mapEmployee = new HashMap<>();
+		Employee emp1 = new Employee(1,"sudhir");
+		Employee emp2 = new Employee(2,"vaibhav");
+		mapEmployee.put(emp1, "sudhir");
+		mapEmployee.put(emp2, "vaibhav");
+		Employee emp3 = new Employee(2,"vaibhavNew");
+		System.out.println(mapEmployee.get(emp3));	
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.id;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+	
+30. Call a child class method from a parent class object.....
+
+Though this is possible, it is not at all recommended as it kind of destroys the reason for inheritance. The best way would be to restructure your application design so that there are NO parent to child dependencies. A parent should not ever need to know its children or their capabilities.
+
+You can do it using below code....
+
+    (Child)p.childMethod();

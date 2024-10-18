@@ -1,0 +1,101 @@
+abstract class Super {
+	public void method() {
+		//default inmp
+	}
+	abstract public void method1();
+}
+
+class childs extedns spuer {
+	void method(){
+	}
+}
+
+
+-------------------------------------------------------
+
+training portal 
+
+emp logedin id name desig count_training 
+
+final class Employee{
+private int id;
+private string name;
+private string desig;
+
+public Employee(int string ){
+}
+
+getMethods();
+
+public boolean equal()
+publi int hashcode()
+}
+
+Map<Employee, Integer> employeerecord
+
+public void login(Employee emp) {
+
+	if (	employeerecord.containsKey(emp)}	{
+int count =		employeerecord.get(emp)
+			employeerecord.put(emp, ++count)
+	}
+
+
+
+----------------------------------------------------------------------
+
+
+class Sample {
+	volatile Sample obj == null;
+	private Sample(){
+	}
+	
+	public static Sample getInstance() {
+		i1f (obj == null) {
+			obj = new Sample();
+			return obj;
+		}
+		retrun object
+	}
+}
+	
+
+try {
+	nullpin
+}
+catch ArithmeticaExceptio {
+}
+finally
+
+sop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+}

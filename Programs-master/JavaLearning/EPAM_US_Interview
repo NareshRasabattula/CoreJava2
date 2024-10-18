@@ -1,0 +1,16 @@
+1. java 8 stream
+2. synchronous vs asunchronous
+3. requirements for key in hashmap
+4. ACID
+5. @Transactional
+6. Hibernate
+7. complicated sql query
+8. Index in db (advantages vs disadvantages)
+9. message queue
+10. Rest best practice
+11. idempotent
+12. junit and integration test
+13. NoSql
+14. AWS basic (EC2, S3, lambda vs EC2, CDN)
+15. diff between region vs availability zone
+16. How to manage lazy loadig in hibernate if we have parent and child class scenario.

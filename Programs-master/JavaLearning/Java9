@@ -1,0 +1,1 @@
+1. Before java 9 we cannot use any Resource (which is declared outside the Try-With-Resources) within try() block of Try-With-Resources statement.

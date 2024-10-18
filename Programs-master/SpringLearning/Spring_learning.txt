@@ -1,0 +1,57 @@
+Spring Introduction -> First spring called as "interface21" and then they name it as "spring".
+Basically spring is a replacement of EJB, because for EJB we should have a application server
+like jboss(it manages the bean in EJB) but in spring bean manage by the IOC which is a part of
+spring. That why spring is light weight.
+--------------------------------------------------------------------------------------------------
+Dependency Injection means passing required parameters to POJO classes from XML/Config file.
+--------------------------------------------------------------------------------------------------
+3 reasons to use Spring Data JPA
+1. No-code Repositories      :- It is based on repository pattern
+2. Reduced boilerplate code  :- It provide some pre-define method.
+3. Generated queries 	 	 :- 
+--------------------------------------------------------------------------------------------------
+To receive data from IOC your class should have setter method or parameterized constructor.
+--------------------------------------------------------------------------------------------------
+Spring create object in following flow
+First it checkes for ByType then ByName then Constructor then default then No.
+ByType
+ByName
+Constructor
+default
+No
+--------------------------------------------------------------------------------------------------
+Following are the bean scope
+1. singleton
+2. prototype
+3. session
+4. request
+5. global session
+--------------------------------------------------------------------------------------------------
+Following are the IOC containers
+1. BeanFactory
+2. ApplicationContext
+3. WebApplicationContext
+--------------------------------------------------------------------------------------------------
+#Difference BeanFactory and ApplicationContext is ->
+ApplicationContext create the bean/object while initailization but BeanFactory create the 
+bean/object while we call the getBean() method.
+
+ApplicationContext is follows Eager loading
+BeanFactory is follows Lazy loading
+
+Note-> But in case of "protype bean" both ApplicationContext and BeanFactory work same.
+--------------------------------------------------------------------------------------------------
+Advantages of IOC 
+1. POJO Instancetation
+2. Life cycle management
+3. Dependency Injection
+--------------------------------------------------------------------------------------------------
+Internationalization or i18n -> is the process of designing software so that it can be adapted (localized) to various languages and regions easily, cost-effectively, and in particular without engineering changes to the software. Localization is performed by simply adding locale-specific components, such as translated text, data describing locale-specific behavior, fonts, and input methods.
+--------------------------------------------------------------------------------------------------
+@Autowired : DI
+@Qualifier : Remove Ambi (But can not get dynamic value to overcode this spring introduced @Resource)
+@Resource  : DI + Remove Ambigu   (@Resource(name="${propertyName}"))
+@PropertySource(value="{classpath:application.properties}")
+--------------------------------------------------------------------------------------------------
+
+servletContext.addServlet() method returns NULL if the perticular dispatcher servlet is already registerd using web.xml file.

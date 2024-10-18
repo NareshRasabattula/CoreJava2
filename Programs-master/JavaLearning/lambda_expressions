@@ -1,0 +1,9 @@
+1. To treat functionality as method argument, or code as data.
+2. After java8 function interface and have static and default method but it should have only single abstract method.
+
+Following are the types of functional interfaces which we can use in lambda expression.
+1. Consumer
+2. Supplier
+3. Function
+4. Operator
+5. Predicate

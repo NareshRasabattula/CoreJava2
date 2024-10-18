@@ -1,0 +1,53 @@
+1 2 3 4 5 6 7
+
+3 midd
+
+
+
+abcde reverse string using optimized approach
+
+
+if((" Nitesh ").trim().equals("Nitesh") ){
+system.out.println("Hi")
+}
+else{
+system.out.println("Bye")
+}
+
+
+
+if((" Nitesh ").trim() == ("Nitesh") ){
+system.out.println("Hi")
+}
+else{
+system.out.println("Bye")
+}
+
+("Nitesh") 100     (" Nitesh ")    
+
+
+
+Map<Integer, String> map = new Hashmap();
+List<Integers> keyset = new ArrayList(map.keySet());
+
+
+
+
+
+
+Account (firstname, lastname, accnumber)
+List<Account>   10 object
+
+
+
+
+Class Account implements Comparator<Account>{
+	String firstname, String  lastname, int accnumber;
+	
+	@Override
+	public int compare(Accont obj1, Accont obj2 ) {
+		obj1.firstname.compareTo(obj2.firstname);
+	}
+}
+
+composition and aggregation 

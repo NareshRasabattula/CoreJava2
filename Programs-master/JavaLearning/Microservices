@@ -1,0 +1,35 @@
+What is API gateway?
+https://microservices.io/patterns/apigateway.html
+
+Service discovery is a pattern (Eureka)
+
+Monolith :- Complexity hidden within
+Microservices :- Complexity between microservices.
+
+Spring Cloud
+
+13
+
+From any REST API we should avoid returing list we always wrappe it into a object they return it.
+
+Why Hardcode URL's are bad?
+Changes requires code update
+Dynamic URL in the cloud 
+Load balancing
+Multiple environment
+
+Service Discovery
+1. Client Service Discovery :- client make the call to SD and SD will return url of requested service 
+2. Server Service Discovery :- client make the call to SD and SD will directly call requested service
+
+Eureka
+Netflix OSS
+
+Ribbon
+Hysterix
+Zuul
+
+Setup to making this work
+1. Start up a Eureka server
+2. Have microservices register(publish) using Eureka client.
+3. Have microservices locate (Consume) using Eureka client.
