@@ -1,0 +1,74 @@
+h2. Composing objects
+
+h3. Designing a Thread-safe Class
+
+What is object's state? State starts with fields
+* If they are of primitive types
+* If the object has fields that are references to other objects, its state will encompass fields from the referenced objects as well (consider state ownership)
+
+Ownership
+* Responsible for
+* Split ownership
+
+Types of state:
+* Fields
+* Set of fields
+
+State synchronization requirements
+* Invariants validate state space
+* Post conditions validate state transitions
+* Pre-conditions
+
+Designing a thread-safe class:
+* Identify object's state
+* Identify the invariants, post- and pre-conditions that constraint object's state
+* Establish a policy for managing concurrent access to the object's state
+
+h3. Instance confinement (not thread safe components)
+
+Types, may be confined to:
+* class instance
+* lexical scope
+* thread
+
+Why use confinement? All codes pathes that lead to confined object are known and can be analyzed. Combined confinement and locking can ensure that non-thread-safe objects are used in a thread-safe manner. Java monitor pattern may be used for synchronization. But private locks has an advantage in that they are encapsulated (monitor is not). Also, copying may be used.
+
+h3. Delegating thread safety (thread safe components)
+
+Advantages:
+* Idea: we can delegat thread safety to a thread safe class (concurrent collection, for example).
+* We can also delegate to more than one underlying state variable as long as those underlying variables are independent.
+* If a state variables is thread-safe, does not participate in any invariants, post-conditions, it can be safely published
+
+Disadvantages:
+* But if a class has compound state, delegating fails (is not not enough)
+
+h3. Adding functionality to thread safe classes
+
+Several ways:
+* Modify the original class
+ ** Advantages:
+  *** All synchronization policy stays in a single class
+ ** Disadvantages:
+  *** Not always possible
+  *** Need to understand defined synchronization policy
+* Extend the class
+ ** Disadvantages:
+  *** Not always possible
+  *** Synchronization policy is split now, can change and break both classes
+* Client side locking - wrap, synchronize with wrapped object monitor
+ ** Disadvantes:
+  *** Very fragile, synchronization is put in a class totally unrelated to the original one
+* Composition - use intrinsic locking, delegate
+ ** Advantages:
+  *** Not fragile
+
+h3. Documenting synchronization policies
+
+Document:
+* thread safety guarantees for clients
+* synchronization policy for maintainers
+
+Interpreting Vague Documentation, "it would be absued if it weren't"
+* See how your code was intended to be used. Does it have to be thread-safe?
+* Interpret the specification from the perspective of someone who implemented it. Is it thread-safe?
